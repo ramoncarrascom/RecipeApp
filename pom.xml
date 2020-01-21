@@ -12,7 +12,9 @@
 	<artifactId>spring5-recipe-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring5-recipe-app</name>
-	<description>Aplicación de recetas basada en la aplicación spring5-recipe-app de Spring Guru</description>
+	<description>Aplicación de recetas basada en la aplicación spring5-recipe-app de Spring Guru
+		https://github.com/springframeworkguru/spring5-recipe-app
+	</description>
 
 	<properties>
 		<java.version>1.8</java.version>

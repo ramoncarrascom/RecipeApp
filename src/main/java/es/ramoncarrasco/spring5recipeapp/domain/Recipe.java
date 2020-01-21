@@ -3,6 +3,11 @@ package es.ramoncarrasco.spring5recipeapp.domain;
 import javax.persistence.*;
 import java.util.Set;
 
+/**
+ * Recipe Entity
+ * @author Ramón Carrasco
+ * Based on Spring Guru RecipeApp https://github.com/springframeworkguru/spring5-recipe-app
+ */
 @Entity
 public class Recipe {
 
