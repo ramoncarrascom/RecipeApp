@@ -1,5 +1,7 @@
 package es.ramoncarrasco.spring5recipeapp.domain;
 
+import es.ramoncarrasco.spring5recipeapp.domain.enums.Difficulty;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -15,6 +17,15 @@ public class Recipe {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
+    private Set<Ingredient> ingredients;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Note note;
+
+    @Enumerated(value = EnumType.STRING)
+    private Difficulty difficulty;
+
     private String description;
     private Integer prepTime;
     private Integer cookTime;
@@ -23,17 +34,8 @@ public class Recipe {
     private String url;
     private String directions;
 
-    // TODO implement Difficulty
-    // private Difficulty difficulty;
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
-    private Set<Ingredient> ingredients;
-
     @Lob
     private Byte[] image;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    private Note note;
 
     public Long getId() {
         return id;
@@ -41,6 +43,30 @@ public class Recipe {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Set<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(Set<Ingredient> ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public Note getNote() {
+        return note;
+    }
+
+    public void setNote(Note note) {
+        this.note = note;
+    }
+
+    public Difficulty getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(Difficulty difficulty) {
+        this.difficulty = difficulty;
     }
 
     public String getDescription() {
@@ -105,13 +131,5 @@ public class Recipe {
 
     public void setImage(Byte[] image) {
         this.image = image;
-    }
-
-    public Note getNote() {
-        return note;
-    }
-
-    public void setNote(Note note) {
-        this.note = note;
     }
 }
