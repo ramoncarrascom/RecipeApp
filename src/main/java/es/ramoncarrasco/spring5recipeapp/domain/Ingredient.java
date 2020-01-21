@@ -3,6 +3,11 @@ package es.ramoncarrasco.spring5recipeapp.domain;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
+/**
+ * Ingredient Entity
+ * @author Ramón Carrasco
+ * Based on Spring Guru RecipeApp https://github.com/springframeworkguru/spring5-recipe-app
+ */
 @Entity
 public class Ingredient {
 
@@ -11,8 +16,8 @@ public class Ingredient {
     private String description;
     private BigDecimal amount;
 
-    // TODO implement UnitOfMeasure
-    // private UnitOfMeasure uom;
+    @OneToOne(fetch = FetchType.EAGER)
+    private UnitOfMeasure uom;
 
     @ManyToOne
     private Recipe recipe;
@@ -39,5 +44,13 @@ public class Ingredient {
 
     public void setRecipe(Recipe recipe) {
         this.recipe = recipe;
+    }
+
+    public UnitOfMeasure getUom() {
+        return uom;
+    }
+
+    public void setUom(UnitOfMeasure uom) {
+        this.uom = uom;
     }
 }
