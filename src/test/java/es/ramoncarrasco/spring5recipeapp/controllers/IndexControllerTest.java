@@ -21,6 +21,11 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+/**
+ * Index Controller tests
+ * @author Ramón Carrasco
+ * Based on Spring Guru RecipeApp https://github.com/springframeworkguru/spring5-recipe-app
+ */
 public class IndexControllerTest {
 
     IndexController indexController;

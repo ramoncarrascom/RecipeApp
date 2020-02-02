@@ -5,6 +5,11 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * Category tests
+ * @author Ramón Carrasco
+ * Based on Spring Guru RecipeApp https://github.com/springframeworkguru/spring5-recipe-app
+ */
 public class CategoryTest {
 
     Category category;
