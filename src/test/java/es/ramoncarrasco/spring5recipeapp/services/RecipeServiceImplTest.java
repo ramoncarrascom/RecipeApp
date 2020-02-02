@@ -13,6 +13,11 @@ import java.util.Set;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
+/**
+ * Recipe Service test
+ * @author Ramón Carrasco
+ * Based on Spring Guru RecipeApp https://github.com/springframeworkguru/spring5-recipe-app
+ */
 public class RecipeServiceImplTest {
 
     RecipeServiceImpl recipeService;
