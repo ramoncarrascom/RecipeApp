@@ -15,7 +15,7 @@ import org.springframework.ui.Model;
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
@@ -36,7 +36,7 @@ public class IndexControllerTest {
     @Mock
     Model model;
 
-    @Before
+    @Before()
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
         indexController = new IndexController(recipeService);
