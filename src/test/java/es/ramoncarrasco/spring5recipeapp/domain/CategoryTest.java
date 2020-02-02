@@ -1,0 +1,37 @@
+package es.ramoncarrasco.spring5recipeapp.domain;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+/**
+ * Category tests
+ * @author Ramón Carrasco
+ * Based on Spring Guru RecipeApp https://github.com/springframeworkguru/spring5-recipe-app
+ */
+public class CategoryTest {
+
+    Category category;
+
+    @Before
+    public void setUp() {
+        category = new Category();
+    }
+
+    @Test
+    public void getId() {
+        Long idValue = 4L;
+
+        category.setId(idValue);
+        assertEquals(idValue, category.getId());
+    }
+
+    @Test
+    public void getRecipes() {
+    }
+
+    @Test
+    public void getDescription() {
+    }
+}
