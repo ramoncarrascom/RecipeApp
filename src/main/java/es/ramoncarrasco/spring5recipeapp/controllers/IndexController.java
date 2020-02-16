@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Optional;
 
+/**
+ * Index controller
+ * @author Ramón Carrasco
+ * From Spring Guru RecipeApp https://github.com/springframeworkguru/spring5-recipe-app
+ */
 @Controller
 @Slf4j
 public class IndexController {

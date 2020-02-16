@@ -16,7 +16,7 @@ import static org.junit.Assert.assertEquals;
 
 
 /**
- * Recipe Service test
+ * Recipe Service integration test
  * @author Ramón Carrasco
  * Based on Spring Guru RecipeApp https://github.com/springframeworkguru/spring5-recipe-app
  */

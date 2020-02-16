@@ -7,6 +7,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Recipe controller
+ * @author Ramón Carrasco
+ * From Spring Guru RecipeApp https://github.com/springframeworkguru/spring5-recipe-app
+ */
 @Controller
 @Slf4j
 public class RecipeController {

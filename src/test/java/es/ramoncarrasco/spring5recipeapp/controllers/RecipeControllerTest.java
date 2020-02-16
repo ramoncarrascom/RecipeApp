@@ -18,7 +18,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 /**
- * Index Controller tests
+ * Recipe Controller tests
  * @author Ramón Carrasco
  * Based on Spring Guru RecipeApp https://github.com/springframeworkguru/spring5-recipe-app
  */
