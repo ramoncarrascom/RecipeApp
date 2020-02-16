@@ -17,25 +17,52 @@ public class RecipeController {
         this.recipeService = recipeService;
     }
 
-    @RequestMapping("/recipe/show/{id}")
-    public String showById(@PathVariable String id, Model model) {
+    @GetMapping
+    @RequestMapping("/recipe/{id}/show")
+    public String showById(@PathVariable Long id, Model model) {
+        log.debug("Get id:"+id);
         model.addAttribute("recipe", recipeService.findById(Long.valueOf(id)));
-
         return "recipe/show";
     }
 
+    @GetMapping
     @RequestMapping("/recipe/new")
     public String newRecipe(Model model) {
+        log.debug("New recipe form");
         model.addAttribute("recipe", new RecipeCommand());
-
         return "recipe/recipeform";
     }
 
     @PostMapping
     @RequestMapping("recipe")
-    public String saveOrUpdate(@ModelAttribute RecipeCommand command){
+    public String saveOrUpdate(@ModelAttribute RecipeCommand command) {
+
+        if (command.getId() == null)
+            log.debug("Saving new recipe:" + command.getDescription());
+        else
+            log.debug("Updating id:" + command.getId());
+
         RecipeCommand savedCommand = recipeService.saveRecipeCommand(command);
 
-        return "redirect:/recipe/show/" + savedCommand.getId();
+        if (command.getId() == null)
+            log.debug("Saved id:" + savedCommand.getId());
+
+        return "redirect:/recipe/" + savedCommand.getId() + "/show";
+    }
+
+    @GetMapping
+    @RequestMapping("recipe/{id}/update")
+    public String updateRecipe(@PathVariable Long id, Model model) {
+        log.debug("Updating id:" + id);
+        model.addAttribute("recipe", recipeService.findCommandById(Long.valueOf(id)));
+        return "recipe/recipeform";
+    }
+
+    @GetMapping
+    @RequestMapping("recipe/{id}/delete")
+    public String deleteById(@PathVariable Long id, Model model) {
+        log.debug("Deleting id:" + id);
+        recipeService.deleteById(Long.valueOf(id));
+        return "redirect:/";
     }
 }
