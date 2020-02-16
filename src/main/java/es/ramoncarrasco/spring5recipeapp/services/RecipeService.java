@@ -1,5 +1,6 @@
 package es.ramoncarrasco.spring5recipeapp.services;
 
+import es.ramoncarrasco.spring5recipeapp.commands.RecipeCommand;
 import es.ramoncarrasco.spring5recipeapp.domain.Recipe;
 
 import java.util.Set;
@@ -15,4 +16,5 @@ public interface RecipeService {
 
     Recipe findById(Long id);
 
+    RecipeCommand saveRecipeCommand(RecipeCommand command);
 }
